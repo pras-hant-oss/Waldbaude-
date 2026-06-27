@@ -1,0 +1,3290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Waldbaude am Staudamm - Premium German Beer Garden & Restaurant in Luisenthal. Traditional German cuisine, homemade cakes, fresh beer, and beautiful forest atmosphere. Perfect for hikers, families, and nature lovers.">
+    <meta name="keywords" content="Beer Garden Germany, Restaurant Luisenthal, German Restaurant, Outdoor Dining, Beer Garden Near Hiking Trails, Homemade German Food, Forest Restaurant, Traditional German Cuisine, Best Beer Garden Luisenthal, Homemade Cakes">
+    <meta name="author" content="Waldbaude am Staudamm">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Waldbaude am Staudamm | German Beer Garden & Restaurant">
+    <meta property="og:description" content="Experience authentic German hospitality in a beautiful forest setting. Fresh beer, homemade cakes, and traditional cuisine.">
+    <meta property="og:type" content="restaurant">
+    <meta property="og:url" content="https://waldbaude-staudamm.de">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Waldbaude am Staudamm | German Beer Garden & Restaurant">
+    <meta name="twitter:description" content="Experience authentic German hospitality in a beautiful forest setting.">
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "Waldbaude am Staudamm",
+        "description": "Premium German Beer Garden and Restaurant in Luisenthal",
+        "url": "https://waldbaude-staudamm.de",
+        "telephone": "+49-177-2699755",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Hammerweg",
+            "addressLocality": "Luisenthal",
+            "postalCode": "99885",
+            "addressCountry": "DE"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "50.7833",
+            "longitude": "10.3167"
+        },
+        "openingHours": [
+            "Mo-Su 10:00-18:00"
+        ],
+        "priceRange": "€€",
+        "servesCuisine": "German",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "reviewCount": "450"
+        }
+    }
+    </script>
+
+    <title>Waldbaude am Staudamm | German Beer Garden & Restaurant in Luisenthal</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --forest-green: #1a3c27;
+            --dark-wood: #3d2817;
+            --cream-white: #faf8f3;
+            --golden-amber: #c9a227;
+            --stone-gray: #6b6b6b;
+            --natural-beige: #e8e0d5;
+            --warm-orange: #d4863c;
+            --deep-green: #0f2418;
+            --glass-bg: rgba(255, 255, 255, 0.08);
+            --glass-border: rgba(255, 255, 255, 0.15);
+            --shadow: rgba(0, 0, 0, 0.15);
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        [data-theme="dark"] {
+            --cream-white: #121a14;
+            --natural-beige: #1a241c;
+            --forest-green: #2d5a3d;
+            --glass-bg: rgba(0, 0, 0, 0.3);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --shadow: rgba(0, 0, 0, 0.4);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--cream-white);
+            color: var(--dark-wood);
+            line-height: 1.7;
+            overflow-x: hidden;
+            transition: var(--transition);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        /* Loading Animation */
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--forest-green);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 99999;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
+        }
+
+        .loader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader-content {
+            text-align: center;
+            color: var(--cream-white);
+        }
+
+        .loader-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards 0.3s;
+        }
+
+        .loader-bar {
+            width: 120px;
+            height: 2px;
+            background: rgba(255,255,255,0.2);
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            border-radius: 2px;
+        }
+
+        .loader-bar::after {
+            content: '';
+            position: absolute;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--golden-amber);
+            animation: loadBar 1.5s ease forwards;
+        }
+
+        @keyframes loadBar {
+            to { left: 100%; }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Scroll Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1.2rem 0;
+            transition: var(--transition);
+        }
+
+        .navbar.scrolled {
+            background: rgba(26, 60, 39, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 0.8rem 0;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--cream-white);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+        }
+
+        .nav-logo:hover {
+            color: var(--golden-amber);
+        }
+
+        .nav-logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--golden-amber);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--cream-white);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            position: relative;
+            transition: var(--transition);
+            opacity: 0.9;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--golden-amber);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            opacity: 1;
+            color: var(--golden-amber);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: 1px solid rgba(255,255,255,0.3);
+            color: var(--cream-white);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            font-size: 1.1rem;
+        }
+
+        .theme-toggle:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: var(--golden-amber);
+            color: var(--golden-amber);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--cream-white);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 700px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--deep-green) 0%, var(--forest-green) 50%, #1a2f1a 100%);
+            z-index: 1;
+        }
+
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%231a3c27" width="1200" height="800"/><path fill="%232d5a3d" opacity="0.3" d="M0 400 Q300 300 600 400 T1200 400 V800 H0 Z"/><path fill="%230f2418" opacity="0.4" d="M0 500 Q400 400 800 500 T1200 500 V800 H0 Z"/></svg>');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.6;
+        }
+
+        .hero-particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--golden-amber);
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: float 15s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) translateX(0); opacity: 0; }
+            10% { opacity: 0.3; }
+            90% { opacity: 0.3; }
+            100% { transform: translateY(-100vh) translateX(50px); opacity: 0; }
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(15, 36, 24, 0.4) 0%, rgba(15, 36, 24, 0.7) 100%);
+            z-index: 3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            max-width: 900px;
+            padding: 0 2rem;
+            color: var(--cream-white);
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            padding: 0.6rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease forwards 0.5s;
+            opacity: 0;
+        }
+
+        .hero-badge .star {
+            color: var(--golden-amber);
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+            animation: fadeInUp 1s ease forwards 0.7s;
+            opacity: 0;
+        }
+
+        .hero-title span {
+            color: var(--golden-amber);
+            font-style: italic;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+            font-weight: 300;
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease forwards 0.9s;
+            opacity: 0;
+        }
+
+        .hero-location {
+            font-size: 1rem;
+            opacity: 0.7;
+            margin-bottom: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            animation: fadeInUp 1s ease forwards 1.1s;
+            opacity: 0;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease forwards 1.3s;
+            opacity: 0;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-primary {
+            background: var(--golden-amber);
+            color: var(--dark-wood);
+            box-shadow: 0 4px 20px rgba(201, 162, 39, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(201, 162, 39, 0.4);
+            background: #d4b43a;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--cream-white);
+            border: 1px solid rgba(255,255,255,0.4);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-outline:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: var(--golden-amber);
+            color: var(--golden-amber);
+        }
+
+        .hero-scroll {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            animation: bounce 2s infinite;
+        }
+
+        .hero-scroll a {
+            color: var(--cream-white);
+            opacity: 0.6;
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .hero-scroll a:hover {
+            opacity: 1;
+            color: var(--golden-amber);
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+
+        /* Section Styles */
+        section {
+            padding: 6rem 0;
+            position: relative;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-label {
+            display: inline-block;
+            color: var(--golden-amber);
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            color: var(--dark-wood);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--stone-gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* About Section */
+        .about {
+            background: var(--cream-white);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image-main {
+            width: 100%;
+            height: 500px;
+            background: linear-gradient(135deg, var(--forest-green), var(--deep-green));
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 20px 60px var(--shadow);
+        }
+
+        .about-image-main::before {
+            content: '🌲';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 8rem;
+            opacity: 0.3;
+        }
+
+        .about-image-accent {
+            position: absolute;
+            bottom: -30px;
+            right: -30px;
+            width: 200px;
+            height: 200px;
+            background: var(--natural-beige);
+            border-radius: 20px;
+            z-index: -1;
+        }
+
+        .about-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark-wood);
+        }
+
+        .about-content p {
+            color: var(--stone-gray);
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .about-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .about-feature-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--forest-green);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            color: var(--golden-amber);
+        }
+
+        .about-feature h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+            color: var(--dark-wood);
+        }
+
+        .about-feature p {
+            font-size: 0.9rem;
+            margin: 0;
+            color: var(--stone-gray);
+        }
+
+        /* Why Choose Us */
+        .why-us {
+            background: linear-gradient(135deg, var(--forest-green) 0%, var(--deep-green) 100%);
+            color: var(--cream-white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .why-us::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="0.5"/></svg>');
+            background-size: 80px 80px;
+            opacity: 0.5;
+        }
+
+        .why-us .section-title {
+            color: var(--cream-white);
+        }
+
+        .why-us .section-subtitle {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .why-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 2.5rem;
+            transition: var(--transition);
+        }
+
+        .why-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--golden-amber);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .why-card-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--golden-amber);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .why-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .why-card p {
+            opacity: 0.8;
+            font-size: 0.95rem;
+        }
+
+        /* Menu Section */
+        .menu {
+            background: var(--cream-white);
+        }
+
+        .menu-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .menu-tab {
+            padding: 0.8rem 1.8rem;
+            background: transparent;
+            border: 1px solid var(--natural-beige);
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 500;
+            color: var(--stone-gray);
+            transition: var(--transition);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+        }
+
+        .menu-tab.active, .menu-tab:hover {
+            background: var(--forest-green);
+            color: var(--cream-white);
+            border-color: var(--forest-green);
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .menu-item {
+            background: var(--cream-white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px var(--shadow);
+            transition: var(--transition);
+            border: 1px solid var(--natural-beige);
+        }
+
+        .menu-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px var(--shadow);
+        }
+
+        .menu-item-image {
+            width: 100%;
+            height: 220px;
+            background: linear-gradient(135deg, var(--natural-beige), var(--forest-green));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            position: relative;
+        }
+
+        .menu-item-badge {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: var(--warm-orange);
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .menu-item-badge.chef {
+            background: var(--golden-amber);
+            color: var(--dark-wood);
+        }
+
+        .menu-item-content {
+            padding: 1.5rem;
+        }
+
+        .menu-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .menu-item-title {
+            font-size: 1.2rem;
+            color: var(--dark-wood);
+        }
+
+        .menu-item-price {
+            font-weight: 700;
+            color: var(--golden-amber);
+            font-size: 1.1rem;
+        }
+
+        .menu-item-desc {
+            color: var(--stone-gray);
+            font-size: 0.9rem;
+        }
+
+        /* Beer Garden Section */
+        .beer-garden {
+            background: var(--natural-beige);
+            position: relative;
+        }
+
+        .beer-garden-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .beer-garden-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark-wood);
+        }
+
+        .beer-garden-content p {
+            color: var(--stone-gray);
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .beer-garden-features {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .beer-garden-feature {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--cream-white);
+            border-radius: 12px;
+            transition: var(--transition);
+        }
+
+        .beer-garden-feature:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 15px var(--shadow);
+        }
+
+        .beer-garden-feature-icon {
+            font-size: 1.5rem;
+        }
+
+        .beer-garden-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .beer-garden-img {
+            border-radius: 20px;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--forest-green), var(--deep-green));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            box-shadow: 0 10px 30px var(--shadow);
+            transition: var(--transition);
+        }
+
+        .beer-garden-img:hover {
+            transform: scale(1.02);
+        }
+
+        .beer-garden-img.large {
+            grid-row: span 2;
+            height: 100%;
+            min-height: 400px;
+        }
+
+        .beer-garden-img.small {
+            height: 190px;
+        }
+
+        /* Gallery */
+        .gallery {
+            background: var(--cream-white);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .gallery-item:nth-child(3n+1) {
+            grid-row: span 2;
+            aspect-ratio: auto;
+        }
+
+        .gallery-item-bg {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--forest-green), var(--deep-green));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-item-bg {
+            transform: scale(1.1);
+        }
+
+        .gallery-item-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 2rem 1.5rem 1.5rem;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            color: white;
+            transform: translateY(100%);
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-item-overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-item-overlay h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .gallery-item-overlay p {
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: linear-gradient(135deg, var(--deep-green), var(--forest-green));
+            color: var(--cream-white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonials::before {
+            content: '"';
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 30rem;
+            color: rgba(255,255,255,0.03);
+            line-height: 1;
+            pointer-events: none;
+        }
+
+        .testimonials .section-title {
+            color: var(--cream-white);
+        }
+
+        .testimonials .section-subtitle {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 2.5rem;
+            transition: var(--transition);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--golden-amber);
+        }
+
+        .testimonial-stars {
+            color: var(--golden-amber);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .testimonial-text {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            background: var(--golden-amber);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--dark-wood);
+            font-size: 1.1rem;
+        }
+
+        .testimonial-info h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .testimonial-info p {
+            font-size: 0.85rem;
+            opacity: 0.7;
+        }
+
+        /* Reservations */
+        .reservations {
+            background: var(--cream-white);
+        }
+
+        .reservation-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .reservation-info h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark-wood);
+        }
+
+        .reservation-info p {
+            color: var(--stone-gray);
+            margin-bottom: 2rem;
+            font-size: 1.05rem;
+        }
+
+        .reservation-contact {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .reservation-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.2rem;
+            background: var(--natural-beige);
+            border-radius: 12px;
+            transition: var(--transition);
+        }
+
+        .reservation-contact-item:hover {
+            background: var(--forest-green);
+            color: var(--cream-white);
+        }
+
+        .reservation-contact-item:hover h4,
+        .reservation-contact-item:hover p {
+            color: var(--cream-white);
+        }
+
+        .reservation-contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--golden-amber);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+
+        .reservation-contact-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.2rem;
+            color: var(--dark-wood);
+        }
+
+        .reservation-contact-item p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: var(--stone-gray);
+        }
+
+        .reservation-form {
+            background: var(--natural-beige);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px var(--shadow);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--dark-wood);
+            font-size: 0.9rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem 1.2rem;
+            border: 1px solid var(--natural-beige);
+            border-radius: 12px;
+            background: var(--cream-white);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            color: var(--dark-wood);
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--golden-amber);
+            box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.1);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 1.2rem;
+            background: var(--forest-green);
+            color: var(--cream-white);
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: 'Inter', sans-serif;
+        }
+
+        .btn-submit:hover {
+            background: var(--deep-green);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        /* FAQ */
+        .faq {
+            background: var(--natural-beige);
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 1rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--cream-white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px var(--shadow);
+            transition: var(--transition);
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 8px 25px var(--shadow);
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--dark-wood);
+            transition: var(--transition);
+        }
+
+        .faq-question:hover {
+            color: var(--forest-green);
+        }
+
+        .faq-icon {
+            width: 30px;
+            height: 30px;
+            background: var(--natural-beige);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            flex-shrink: 0;
+        }
+
+        .faq-item.active .faq-icon {
+            background: var(--forest-green);
+            color: var(--cream-white);
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+            padding: 0 1.5rem 1.5rem;
+        }
+
+        .faq-answer p {
+            color: var(--stone-gray);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* Contact */
+        .contact {
+            background: var(--cream-white);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark-wood);
+        }
+
+        .contact-info > p {
+            color: var(--stone-gray);
+            margin-bottom: 2rem;
+            font-size: 1.05rem;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .contact-detail-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--forest-green);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            color: var(--golden-amber);
+            flex-shrink: 0;
+        }
+
+        .contact-detail h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+            color: var(--dark-wood);
+        }
+
+        .contact-detail p {
+            margin: 0;
+            color: var(--stone-gray);
+            font-size: 0.95rem;
+        }
+
+        .contact-hours {
+            background: var(--natural-beige);
+            padding: 1.5rem;
+            border-radius: 16px;
+            margin-top: 2rem;
+        }
+
+        .contact-hours h4 {
+            margin-bottom: 1rem;
+            color: var(--dark-wood);
+        }
+
+        .hours-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            font-size: 0.95rem;
+        }
+
+        .hours-row:last-child {
+            border-bottom: none;
+        }
+
+        .hours-row span:first-child {
+            color: var(--stone-gray);
+        }
+
+        .hours-row span:last-child {
+            font-weight: 600;
+            color: var(--dark-wood);
+        }
+
+        .contact-map {
+            background: var(--natural-beige);
+            border-radius: 20px;
+            overflow: hidden;
+            height: 100%;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0 10px 40px var(--shadow);
+        }
+
+        .contact-map-placeholder {
+            text-align: center;
+            color: var(--stone-gray);
+        }
+
+        .contact-map-placeholder .map-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .contact-map-btn {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.8rem 1.5rem;
+            background: var(--forest-green);
+            color: var(--cream-white);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .contact-map-btn:hover {
+            background: var(--deep-green);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--deep-green);
+            color: var(--cream-white);
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--golden-amber);
+        }
+
+        .footer-brand p {
+            opacity: 0.7;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--cream-white);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 1.1rem;
+        }
+
+        .footer-social a:hover {
+            background: var(--golden-amber);
+            color: var(--dark-wood);
+            border-color: var(--golden-amber);
+        }
+
+        .footer-column h4 {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: var(--golden-amber);
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-column a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+
+        .footer-column a:hover {
+            color: var(--golden-amber);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-bottom p {
+            opacity: 0.6;
+            font-size: 0.9rem;
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-bottom-links a {
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .footer-bottom-links a:hover {
+            color: var(--golden-amber);
+        }
+
+        /* Floating Buttons */
+        .floating-buttons {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            z-index: 999;
+        }
+
+        .floating-btn {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            color: white;
+            text-decoration: none;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .floating-btn:hover {
+            transform: translateY(-3px) scale(1.1);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+        }
+
+        .floating-btn.call {
+            background: var(--forest-green);
+        }
+
+        .floating-btn.reserve {
+            background: var(--golden-amber);
+            color: var(--dark-wood);
+        }
+
+        .floating-btn-tooltip {
+            position: absolute;
+            right: 70px;
+            background: var(--dark-wood);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateX(10px);
+            transition: var(--transition);
+        }
+
+        .floating-btn:hover .floating-btn-tooltip {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(0);
+        }
+
+        /* Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            left: 2rem;
+            width: 50px;
+            height: 50px;
+            background: var(--forest-green);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--golden-amber);
+            color: var(--dark-wood);
+            transform: translateY(-3px);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            max-width: 400px;
+            height: 100vh;
+            background: var(--forest-green);
+            z-index: 1001;
+            padding: 6rem 2rem 2rem;
+            transition: right 0.4s ease;
+            overflow-y: auto;
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: none;
+            border: none;
+            color: var(--cream-white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .mobile-menu-links {
+            list-style: none;
+        }
+
+        .mobile-menu-links li {
+            margin-bottom: 1.5rem;
+        }
+
+        .mobile-menu-links a {
+            color: var(--cream-white);
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: 500;
+            transition: var(--transition);
+            display: block;
+            padding: 0.5rem 0;
+        }
+
+        .mobile-menu-links a:hover {
+            color: var(--golden-amber);
+            padding-left: 10px;
+        }
+
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+
+        .mobile-menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .about-grid,
+            .beer-garden-grid,
+            .reservation-container,
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 280px;
+                justify-content: center;
+            }
+
+            .about-features {
+                grid-template-columns: 1fr;
+            }
+
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .floating-buttons {
+                bottom: 1rem;
+                right: 1rem;
+            }
+
+            .back-to-top {
+                bottom: 1rem;
+                left: 1rem;
+            }
+        }
+
+        /* Parallax */
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        /* Counter Animation */
+        .counter {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--golden-amber);
+        }
+
+        /* Events Section */
+        .events {
+            background: var(--cream-white);
+        }
+
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .event-card {
+            background: var(--natural-beige);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: var(--transition);
+            box-shadow: 0 4px 20px var(--shadow);
+        }
+
+        .event-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px var(--shadow);
+        }
+
+        .event-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--forest-green), var(--deep-green));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        .event-content {
+            padding: 1.5rem;
+        }
+
+        .event-date {
+            display: inline-block;
+            background: var(--golden-amber);
+            color: var(--dark-wood);
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+        }
+
+        .event-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark-wood);
+        }
+
+        .event-content p {
+            color: var(--stone-gray);
+            font-size: 0.95rem;
+        }
+
+        /* Stats Section */
+        .stats {
+            background: linear-gradient(135deg, var(--forest-green), var(--deep-green));
+            color: var(--cream-white);
+            padding: 4rem 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 3rem;
+            color: var(--golden-amber);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-item p {
+            opacity: 0.8;
+            font-size: 1rem;
+        }
+
+        /* Smooth scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--cream-white);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--forest-green);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--deep-green);
+        }
+
+        /* Selection */
+        ::selection {
+            background: var(--golden-amber);
+            color: var(--dark-wood);
+        }
+    </style>
+<base target="_blank">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="loader-logo">Waldbaude am Staudamm</div>
+            <div class="loader-bar"></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <span class="nav-logo-icon">🌲</span>
+                <span>Waldbaude</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#beer-garden">Beer Garden</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#reservations">Reserve</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">☰</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu-close" id="mobileMenuClose">✕</button>
+        <ul class="mobile-menu-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#beer-garden">Beer Garden</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#reservations">Reservations</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg"></div>
+        <div class="hero-particles" id="particles"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="star">★</span>
+                <span>4.8/5 Google Rating · 450+ Reviews</span>
+            </div>
+            <h1 class="hero-title">Waldbaude <span>am Staudamm</span></h1>
+            <p class="hero-subtitle">Where Forest Meets Flavor</p>
+            <p class="hero-location">📍 Hammerweg, 99885 Luisenthal, Germany</p>
+            <div class="hero-buttons">
+                <a href="#reservations" class="btn btn-primary">📅 Reserve Table</a>
+                <a href="tel:+491772699755" class="btn btn-outline">📞 Call Now</a>
+                <a href="https://maps.google.com/?q=Hammerweg+99885+Luisenthal" target="_blank" class="btn btn-outline">🗺️ Get Directions</a>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <a href="#about">↓</a>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item reveal">
+                    <h3>4.8</h3>
+                    <p>Google Rating</p>
+                </div>
+                <div class="stat-item reveal">
+                    <h3>450+</h3>
+                    <p>Happy Reviews</p>
+                </div>
+                <div class="stat-item reveal">
+                    <h3>10+</h3>
+                    <p>Years of Service</p>
+                </div>
+                <div class="stat-item reveal">
+                    <h3>€10-20</h3>
+                    <p>Price Range</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image reveal">
+                    <div class="about-image-main"></div>
+                    <div class="about-image-accent"></div>
+                </div>
+                <div class="about-content reveal">
+                    <span class="section-label">Our Story</span>
+                    <h2>A Haven in the Heart of the Forest</h2>
+                    <p>Nestled among ancient trees and overlooking the serene waters of the Staudamm, Waldbaude am Staudamm has been a beloved destination for nature enthusiasts, families, and food lovers since its founding. Our restaurant embodies the perfect harmony between traditional German hospitality and the untouched beauty of the Thuringian Forest.</p>
+                    <p>Every dish we serve tells a story of local heritage, crafted with ingredients sourced from nearby farms and prepared according to time-honored recipes passed down through generations. Our beer garden, shaded by century-old oaks, offers an unparalleled atmosphere where the gentle rustling of leaves accompanies every sip of fresh German beer.</p>
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <div class="about-feature-icon">🌿</div>
+                            <div>
+                                <h4>Fresh Ingredients</h4>
+                                <p>Locally sourced from regional farms</p>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <div class="about-feature-icon">🏔️</div>
+                            <div>
+                                <h4>Perfect Location</h4>
+                                <p>Near hiking trails and the dam</p>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <div class="about-feature-icon">👨‍👩‍👧</div>
+                            <div>
+                                <h4>Family Friendly</h4>
+                                <p>Welcoming atmosphere for all ages</p>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <div class="about-feature-icon">🍺</div>
+                            <div>
+                                <h4>Traditional Beer</h4>
+                                <p>Authentic German brews on tap</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-us" id="why-us">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Why Visit Us</span>
+                <h2 class="section-title">Experience the Waldbaude Difference</h2>
+                <p class="section-subtitle">Discover what makes our beer garden and restaurant a favorite destination for locals and travelers alike.</p>
+            </div>
+            <div class="why-grid">
+                <div class="why-card reveal">
+                    <div class="why-card-icon">🏔️</div>
+                    <h3>Perfect Hiking Destination</h3>
+                    <p>Situated directly on popular hiking and cycling routes, we are the ideal rest stop after an active day in nature. Enjoy refreshing drinks and hearty meals with panoramic forest views.</p>
+                </div>
+                <div class="why-card reveal">
+                    <div class="why-card-icon">🌲</div>
+                    <h3>Immersive Nature Experience</h3>
+                    <p>Surrounded by pristine woodland and the tranquil Staudamm reservoir, our location offers a peaceful escape from everyday life. Breathe fresh forest air while savoring authentic German cuisine.</p>
+                </div>
+                <div class="why-card reveal">
+                    <div class="why-card-icon">🍺</div>
+                    <h3>Traditional German Hospitality</h3>
+                    <p>Experience warm, genuine service that reflects the best of German culture. Our friendly staff ensures every visit feels like coming home to family.</p>
+                </div>
+                <div class="why-card reveal">
+                    <div class="why-card-icon">🍰</div>
+                    <h3>Homemade Specialties</h3>
+                    <p>From our famous homemade cakes to traditional Thuringian sausages, every dish is prepared with love and expertise in our kitchen using fresh, local ingredients.</p>
+                </div>
+                <div class="why-card reveal">
+                    <div class="why-card-icon">🌳</div>
+                    <h3>Fresh Beer Garden</h3>
+                    <p>Our spacious outdoor seating area under ancient trees provides the perfect setting for enjoying cold German beer, lively conversation, and the sounds of nature.</p>
+                </div>
+                <div class="why-card reveal">
+                    <div class="why-card-icon">🎉</div>
+                    <h3>Weekend Escape</h3>
+                    <p>Whether you are seeking a romantic dinner, a family outing, or a gathering with friends, Waldbaude am Staudamm offers the perfect weekend retreat for every occasion.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu" id="menu">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Our Menu</span>
+                <h2 class="section-title">Authentic German Cuisine</h2>
+                <p class="section-subtitle">From traditional Thuringian specialties to homemade cakes and refreshing German beers.</p>
+            </div>
+            <div class="menu-tabs reveal">
+                <button class="menu-tab active" data-category="meals">Traditional Meals</button>
+                <button class="menu-tab" data-category="soups">Soups</button>
+                <button class="menu-tab" data-category="sausages">Sausages</button>
+                <button class="menu-tab" data-category="grilled">Grilled Dishes</button>
+                <button class="menu-tab" data-category="salads">Salads</button>
+                <button class="menu-tab" data-category="cakes">Homemade Cakes</button>
+                <button class="menu-tab" data-category="beer">German Beer</button>
+                <button class="menu-tab" data-category="drinks">Drinks</button>
+            </div>
+            <div class="menu-grid" id="menuGrid">
+                <!-- Meals -->
+                <div class="menu-item" data-category="meals">
+                    <div class="menu-item-image">🍖</div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Thuringian Rostbrätel</h3>
+                            <span class="menu-item-price">€14.50</span>
+                        </div>
+                        <p class="menu-item-desc">Marinated pork neck grilled to perfection, served with sauerkraut and bread dumplings.</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="meals">
+                    <div class="menu-item-image">🥩</div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Sauerbraten</h3>
+                            <span class="menu-item-price">€16.90</span>
+                        </div>
+                        <p class="menu-item-desc">Traditional German pot roast, marinated for days in a spiced vinegar mixture, served with red cabbage and potato dumplings.</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="meals">
+                    <div class="menu-item-image">🍗</div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Schweinshaxe</h3>
+                            <span class="menu-item-price">€15.50</span>
+                        </div>
+                        <p class="menu-item-desc">Crispy roasted pork knuckle with crackling skin, served with potato salad and mustard.</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="meals">
+                    <div class="menu-item-image">🥘</div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Rahmschnitzel</h3>
+                            <span class="menu-item-price">€13.90</span>
+                        </div>
+                        <p class="menu-item-desc">Breaded pork cutlet in a creamy mushroom sauce, served with spaetzle and seasonal vegetables.</p>
+                    </div>
+                </div>
+                <!-- Soups -->
+                <div class="menu-item" data-category="soups" style="display:none">
+                    <div class="menu-item-image">🍲</div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Homemade Soljanka</h3>
+                            <span class="menu-item-price">€7.50</span>
+                        </div>
+                        <p class="menu-item-desc">Hearty Eastern European soup with smoked meats, pickles, and sour cream. A customer favorite.</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="soups" style="display:none">
+                    <div class="menu-item-image">🥣</div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Goulash Soup</h3>
+                            <span class="menu-item-price">€6.90</span>
+                        </div>
+                        <p class="menu-item-desc">Rich and spicy beef soup with paprika, potatoes, and fresh bread on the side.</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="soups" style="display:none">
+                    <div class="menu-item-image">🍜</div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Potato Soup</h3>
+                            <span class="menu-item-price">€5.90</span>
+                        </div>
+                        <p class="menu-item-desc">Creamy potato soup with bacon bits, croutons, and fresh chives from our garden.</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="soups" style="display:none">
+                    <div class="menu-item-image">🥄</div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Lentil Soup</h3>
+                            <span class="menu-item-price">€6.50</span>
+                        </div>
+                        <p class="menu-item-desc">Traditional German lentil soup with smoked sausage and vinegar, served with crusty bread.</p>
+                    </div>
+                </div>
+                <!-- Sausages -->
+                <div class="menu-item" data-category="sausages" style="display:none">
+                    <div class="menu-item-image">🌭</div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Thuringian Bratwurst</h3>
+                            <span class="menu-item-price">€9.50</span>
+                        </div>
+                        <p class="menu-item-desc">Authentic Thuringian Rostbratwurst, charcoal-grilled, served with mustard and fresh bread roll.</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="sausages" style="display:none">
+                    <div class="menu-item-image">🥓</div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Bratwurst Plate</h3>
+                            <span class="menu-item-price">€12.90</span>
+                        </div>
+                        <p class="menu-item-desc">Two grilled Thuringian sausages with sauerkraut, mashed potatoes, and gravy.</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="sausages" style="display:none">
+                    <div class="menu-item-image">🍖</div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Currywurst</h3>
+                            <span class="menu-item-price">€8.50</span>
+                        </div>
+                        <p class="menu-item-desc">Sliced bratwurst in our signature curry ketchup sauce, served with crispy French fries.</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="sausages" style="display:none">
+                    <div class="menu-item-image">🥪</div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Leberkäse</h3>
+                            <span class="menu-item-price">€7.90</span>
+                        </div>
+                        <p class="menu-item-desc">Traditional German meatloaf, pan-fried until crispy, served with a fried egg and potato salad.</p>
+                    </div>
+                </div>
+                <!-- Grilled -->
+                <div class="menu-item" data-category="grilled" style="display:none">
+                    <div class="menu-item-image">🥩</div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Mixed Grill Plate</h3>
+                            <span class="menu-item-price">€18.50</span>
+                        </div>
+                        <p class="menu-item-desc">Generous platter with pork steak, bratwurst, chicken skewer, and grilled vegetables.</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="grilled" style="display:none">
+                    <div class="menu-item-image">🍗</div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Grilled Chicken</h3>
+                            <span class="menu-item-price">€13.50</span>
+                        </div>
+                        <p class="menu-item-desc">Half chicken marinated in herbs, grilled over charcoal, served with garlic sauce and salad.</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="grilled" style="display:none">
+                    <div class="menu-item-image">🥓</div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Pork Medallions</h3>
+                            <span class="menu-item-price">€15.90</span>
+                        </div>
+                        <p class="menu-item-desc">Tender pork medallions wrapped in bacon, grilled and served with pepper sauce and vegetables.</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="grilled" style="display:none">
+                    <div class="menu-item-image">🍖</div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Grilled Salmon</h3>
+                            <span class="menu-item-price">€16.50</span>
+                        </div>
+                        <p class="menu-item-desc">Fresh salmon fillet grilled with lemon and dill, served with herb butter and roasted potatoes.</p>
+                    </div>
+                </div>
+                <!-- Salads -->
+                <div class="menu-item" data-category="salads" style="display:none">
+                    <div class="menu-item-image">🥗</div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Mixed Green Salad</h3>
+                            <span class="menu-item-price">€6.50</span>
+                        </div>
+                        <p class="menu-item-desc">Fresh seasonal greens, cherry tomatoes, cucumber, and red onion with house vinaigrette.</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="salads" style="display:none">
+                    <div class="menu-item-image">🥙</div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Caesar Salad</h3>
+                            <span class="menu-item-price">€9.50</span>
+                        </div>
+                        <p class="menu-item-desc">Crisp romaine lettuce with Parmesan, croutons, bacon, and our creamy Caesar dressing.</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="salads" style="display:none">
+                    <div class="menu-item-image">🥗</div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Potato Salad</h3>
+                            <span class="menu-item-price">€5.50</span>
+                        </div>
+                        <p class="menu-item-desc">Traditional German potato salad with bacon, onions, and a warm vinegar dressing.</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="salads" style="display:none">
+                    <div class="menu-item-image">🥙</div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Chicken Salad</h3>
+                            <span class="menu-item-price">€10.50</span>
+                        </div>
+                        <p class="menu-item-desc">Grilled chicken strips on mixed greens with avocado, corn, and honey-mustard dressing.</p>
+                    </div>
+                </div>
+                <!-- Cakes -->
+                <div class="menu-item" data-category="cakes" style="display:none">
+                    <div class="menu-item-image">🍰</div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Black Forest Cake</h3>
+                            <span class="menu-item-price">€5.50</span>
+                        </div>
+                        <p class="menu-item-desc">Layers of chocolate sponge, whipped cream, and cherries, topped with chocolate shavings. Our signature dessert.</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="cakes" style="display:none">
+                    <div class="menu-item-image">🧁</div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Apple Strudel</h3>
+                            <span class="menu-item-price">€4.90</span>
+                        </div>
+                        <p class="menu-item-desc">Homemade apple strudel with cinnamon, raisins, and vanilla sauce. A true German classic.</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="cakes" style="display:none">
+                    <div class="menu-item-image">🍰</div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Cheesecake</h3>
+                            <span class="menu-item-price">€4.50</span>
+                        </div>
+                        <p class="menu-item-desc">Creamy German-style cheesecake with a hint of lemon, served with berry compote.</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="cakes" style="display:none">
+                    <div class="menu-item-image">🥧</div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Linzer Torte</h3>
+                            <span class="menu-item-price">€4.90</span>
+                        </div>
+                        <p class="menu-item-desc">Traditional nutty shortcrust pastry with red currant jam lattice top. Perfect with coffee.</p>
+                    </div>
+                </div>
+                <!-- Beer -->
+                <div class="menu-item" data-category="beer" style="display:none">
+                    <div class="menu-item-image">🍺</div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Pilsner (0.5L)</h3>
+                            <span class="menu-item-price">€4.50</span>
+                        </div>
+                        <p class="menu-item-desc">Crisp, refreshing German Pilsner with a clean finish. The perfect thirst quencher after hiking.</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="beer" style="display:none">
+                    <div class="menu-item-image">🍻</div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Weissbier (0.5L)</h3>
+                            <span class="menu-item-price">€4.90</span>
+                        </div>
+                        <p class="menu-item-desc">Traditional Bavarian wheat beer with fruity notes of banana and clove. Unfiltered and refreshing.</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="beer" style="display:none">
+                    <div class="menu-item-image">🍺</div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Dunkel (0.5L)</h3>
+                            <span class="menu-item-price">€4.70</span>
+                        </div>
+                        <p class="menu-item-desc">Dark German lager with roasted malt flavors, caramel notes, and a smooth finish.</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="beer" style="display:none">
+                    <div class="menu-item-image">🍻</div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Radler (0.5L)</h3>
+                            <span class="menu-item-price">€4.20</span>
+                        </div>
+                        <p class="menu-item-desc">Refreshing blend of beer and lemonade. A light, citrusy option perfect for sunny afternoons.</p>
+                    </div>
+                </div>
+                <!-- Drinks -->
+                <div class="menu-item" data-category="drinks" style="display:none">
+                    <div class="menu-item-image">☕</div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Coffee</h3>
+                            <span class="menu-item-price">€2.90</span>
+                        </div>
+                        <p class="menu-item-desc">Freshly brewed German coffee, perfect accompaniment to our homemade cakes.</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="drinks" style="display:none">
+                    <div class="menu-item-image">🫖</div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Tea Selection</h3>
+                            <span class="menu-item-price">€2.50</span>
+                        </div>
+                        <p class="menu-item-desc">Choose from black, green, herbal, and fruit teas. Served with honey and lemon on request.</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="drinks" style="display:none">
+                    <div class="menu-item-image">🥤</div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Homemade Lemonade</h3>
+                            <span class="menu-item-price">€3.50</span>
+                        </div>
+                        <p class="menu-item-desc">Freshly squeezed lemonade with mint and a touch of elderflower syrup. Refreshing and natural.</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="drinks" style="display:none">
+                    <div class="menu-item-image">🧃</div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-title">Apple Spritzer</h3>
+                            <span class="menu-item-price">€3.20</span>
+                        </div>
+                        <p class="menu-item-desc">Local apple juice mixed with sparkling mineral water. A Thuringian favorite.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Beer Garden Section -->
+    <section class="beer-garden" id="beer-garden">
+        <div class="container">
+            <div class="beer-garden-grid">
+                <div class="beer-garden-content reveal">
+                    <span class="section-label">Outdoor Dining</span>
+                    <h2>Our Beautiful Beer Garden</h2>
+                    <p>Step into our enchanting beer garden, where centuries-old oak trees provide natural shade and the gentle breeze carries the scent of pine and fresh beer. This is where memories are made.</p>
+                    <p>With seating for over 100 guests, our beer garden is the perfect venue for family gatherings, post-hike refreshments, or simply unwinding with friends while enjoying the symphony of the forest.</p>
+                    <div class="beer-garden-features">
+                        <div class="beer-garden-feature">
+                            <span class="beer-garden-feature-icon">🌳</span>
+                            <div>
+                                <h4>Natural Shade</h4>
+                                <p>Century-old trees provide cool, refreshing shade</p>
+                            </div>
+                        </div>
+                        <div class="beer-garden-feature">
+                            <span class="beer-garden-feature-icon">🍺</span>
+                            <div>
+                                <h4>Fresh Beer on Tap</h4>
+                                <p>Authentic German beers served ice-cold</p>
+                            </div>
+                        </div>
+                        <div class="beer-garden-feature">
+                            <span class="beer-garden-feature-icon">👨‍👩‍👧‍👦</span>
+                            <div>
+                                <h4>Family Friendly</h4>
+                                <p>Play area and spacious seating for families</p>
+                            </div>
+                        </div>
+                        <div class="beer-garden-feature">
+                            <span class="beer-garden-feature-icon">🐕</span>
+                            <div>
+                                <h4>Dog Friendly</h4>
+                                <p>Your four-legged friends are welcome</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="beer-garden-images reveal">
+                    <div class="beer-garden-img large">🌲</div>
+                    <div class="beer-garden-img small">🍺</div>
+                    <div class="beer-garden-img small">🌿</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Gallery</span>
+                <h2 class="section-title">Moments at Waldbaude</h2>
+                <p class="section-subtitle">A glimpse into the beauty, flavors, and atmosphere that await you.</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item reveal">
+                    <div class="gallery-item-bg">🌲</div>
+                    <div class="gallery-item-overlay">
+                        <h4>Forest Views</h4>
+                        <p>Surrounded by pristine nature</p>
+                    </div>
+                </div>
+                <div class="gallery-item reveal">
+                    <div class="gallery-item-bg">🍖</div>
+                    <div class="gallery-item-overlay">
+                        <h4>Traditional Cuisine</h4>
+                        <p>Authentic German dishes</p>
+                    </div>
+                </div>
+                <div class="gallery-item reveal">
+                    <div class="gallery-item-bg">🍺</div>
+                    <div class="gallery-item-overlay">
+                        <h4>Cold Beer</h4>
+                        <p>Perfect after a hike</p>
+                    </div>
+                </div>
+                <div class="gallery-item reveal">
+                    <div class="gallery-item-bg">🍰</div>
+                    <div class="gallery-item-overlay">
+                        <h4>Homemade Cakes</h4>
+                        <p>Baked fresh daily</p>
+                    </div>
+                </div>
+                <div class="gallery-item reveal">
+                    <div class="gallery-item-bg">🏔️</div>
+                    <div class="gallery-item-overlay">
+                        <h4>Staudamm Views</h4>
+                        <p>Overlooking the reservoir</p>
+                    </div>
+                </div>
+                <div class="gallery-item reveal">
+                    <div class="gallery-item-bg">🌳</div>
+                    <div class="gallery-item-overlay">
+                        <h4>Beer Garden</h4>
+                        <p>Under ancient oaks</p>
+                    </div>
+                </div>
+                <div class="gallery-item reveal">
+                    <div class="gallery-item-bg">👨‍👩‍👧</div>
+                    <div class="gallery-item-overlay">
+                        <h4>Family Time</h4>
+                        <p>Creating memories together</p>
+                    </div>
+                </div>
+                <div class="gallery-item reveal">
+                    <div class="gallery-item-bg">🎉</div>
+                    <div class="gallery-item-overlay">
+                        <h4>Events</h4>
+                        <p>Special celebrations</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section class="events" id="events">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Upcoming</span>
+                <h2 class="section-title">Events & Specials</h2>
+                <p class="section-subtitle">Join us for seasonal celebrations, themed evenings, and special culinary experiences.</p>
+            </div>
+            <div class="events-grid">
+                <div class="event-card reveal">
+                    <div class="event-image">🍂</div>
+                    <div class="event-content">
+                        <span class="event-date">Every Weekend</span>
+                        <h3>Autumn Harvest Menu</h3>
+                        <p>Celebrate the harvest season with our special menu featuring pumpkin soup, game dishes, and fresh apple strudel.</p>
+                    </div>
+                </div>
+                <div class="event-card reveal">
+                    <div class="event-image">🎄</div>
+                    <div class="event-content">
+                        <span class="event-date">December</span>
+                        <h3>Christmas Market Special</h3>
+                        <p>Warm up with mulled wine, gingerbread, and our festive Christmas menu in a cozy, decorated atmosphere.</p>
+                    </div>
+                </div>
+                <div class="event-card reveal">
+                    <div class="event-image">🍺</div>
+                    <div class="event-content">
+                        <span class="event-date">Monthly</span>
+                        <h3>Beer Tasting Evening</h3>
+                        <p>Explore different German beer varieties with guided tastings and paired snacks. Reservations recommended.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="reviews">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Testimonials</span>
+                <h2 class="section-title">What Our Guests Say</h2>
+                <p class="section-subtitle">Real experiences from hikers, families, and food lovers who have visited Waldbaude am Staudamm.</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"After a long hike through the Thuringian Forest, finding Waldbaude was like discovering a hidden gem. The homemade Black Forest cake was absolutely divine, and the beer garden atmosphere is simply unbeatable. Feels like home!"</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">MK</div>
+                        <div class="testimonial-info">
+                            <h4>Michael K.</h4>
+                            <p>Hiking Enthusiast · Berlin</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"We brought our entire family here for Sunday lunch, and everyone from the grandparents to the toddlers had a wonderful time. The kids loved the outdoor play area, and we parents finally got to relax with a cold Weissbier. The Thuringian Bratwurst is the best I have ever tasted!"</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">SF</div>
+                        <div class="testimonial-info">
+                            <h4>Sarah F.</h4>
+                            <p>Mother of Three · Erfurt</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"As a cycling tour guide, I have visited countless beer gardens across Germany. Waldbaude am Staudamm stands out for its exceptional quality, friendly service, and that incredible view of the dam. My groups always request to stop here!"</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">TH</div>
+                        <div class="testimonial-info">
+                            <h4>Thomas H.</h4>
+                            <p>Cycling Guide · Leipzig</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"The Soljanka soup here is legendary! Rich, hearty, and perfectly seasoned. Combined with a fresh Pilsner in the shade of the oak trees, it is the perfect reward after a morning hike. The staff always greets us with a smile."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">LB</div>
+                        <div class="testimonial-info">
+                            <h4>Laura B.</h4>
+                            <p>Nature Photographer · Munich</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"We celebrated our anniversary here, and it could not have been more perfect. The Sauerbraten was melt-in-your-mouth tender, and the romantic forest setting made it unforgettable. The homemade cheesecake for dessert was the cherry on top!"</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">JW</div>
+                        <div class="testimonial-info">
+                            <h4>Julia & Wolfgang</h4>
+                            <p>Anniversary Celebration · Frankfurt</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"I have been coming here with my dog every weekend for two years. The staff always brings water for my Labrador, and the outdoor seating is spacious and comfortable. The Rahmschnitzel is consistently excellent, and the prices are very fair."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">DP</div>
+                        <div class="testimonial-info">
+                            <h4>Dieter P.</h4>
+                            <p>Regular Guest · Luisenthal</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservations Section -->
+    <section class="reservations" id="reservations">
+        <div class="container">
+            <div class="reservation-container">
+                <div class="reservation-info reveal">
+                    <span class="section-label">Reservations</span>
+                    <h2>Book Your Table</h2>
+                    <p>Reserve your spot at Waldbaude am Staudamm and ensure an unforgettable dining experience surrounded by nature. Whether it is a family gathering, romantic dinner, or post-hike refreshment, we look forward to welcoming you.</p>
+                    <div class="reservation-contact">
+                        <div class="reservation-contact-item">
+                            <div class="reservation-contact-icon">📞</div>
+                            <div>
+                                <h4>Phone Reservation</h4>
+                                <p>+49 177 2699755</p>
+                            </div>
+                        </div>
+                        <div class="reservation-contact-item">
+                            <div class="reservation-contact-icon">📧</div>
+                            <div>
+                                <h4>Email</h4>
+                                <p>info@waldbaude-staudamm.de</p>
+                            </div>
+                        </div>
+                        <div class="reservation-contact-item">
+                            <div class="reservation-contact-icon">🕐</div>
+                            <div>
+                                <h4>Opening Hours</h4>
+                                <p>Daily 10:00 AM - 6:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="reservation-form reveal">
+                    <form id="reservationForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Full Name *</label>
+                                <input type="text" id="name" name="name" required placeholder="Your name">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" required placeholder="+49...">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="your@email.com">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="guests">Number of Guests *</label>
+                                <select id="guests" name="guests" required>
+                                    <option value="">Select</option>
+                                    <option value="1">1 Person</option>
+                                    <option value="2">2 People</option>
+                                    <option value="3">3 People</option>
+                                    <option value="4">4 People</option>
+                                    <option value="5">5 People</option>
+                                    <option value="6">6 People</option>
+                                    <option value="7+">7+ People</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="date">Date *</label>
+                                <input type="date" id="date" name="date" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="time">Time *</label>
+                            <select id="time" name="time" required>
+                                <option value="">Select time</option>
+                                <option value="10:00">10:00 AM</option>
+                                <option value="11:00">11:00 AM</option>
+                                <option value="12:00">12:00 PM</option>
+                                <option value="13:00">1:00 PM</option>
+                                <option value="14:00">2:00 PM</option>
+                                <option value="15:00">3:00 PM</option>
+                                <option value="16:00">4:00 PM</option>
+                                <option value="17:00">5:00 PM</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="requests">Special Requests</label>
+                            <textarea id="requests" name="requests" placeholder="Dietary requirements, special occasions, seating preferences..."></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">Confirm Reservation</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">FAQ</span>
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-subtitle">Everything you need to know before visiting Waldbaude am Staudamm.</p>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item reveal">
+                    <div class="faq-question">
+                        <span>Do you accept reservations?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we highly recommend making a reservation, especially on weekends and holidays. You can reserve by phone at +49 177 2699755 or use our online reservation form. Walk-ins are also welcome based on availability.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <div class="faq-question">
+                        <span>Are dogs allowed?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely! We are a dog-friendly establishment. Well-behaved dogs are welcome in our outdoor beer garden area. We even provide fresh water bowls for your four-legged friends upon request.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <div class="faq-question">
+                        <span>Do you have outdoor seating?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, our beautiful beer garden is the highlight of our restaurant. With seating for over 100 guests under century-old oak trees, it is the perfect place to enjoy your meal surrounded by nature.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <div class="faq-question">
+                        <span>Is parking available?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we have a free parking lot directly adjacent to the restaurant with ample space for cars and bicycles. Additional parking is available along Hammerweg for busy days.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <div class="faq-question">
+                        <span>Is the restaurant family friendly?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Very much so! We welcome families with children of all ages. We have a dedicated play area in the beer garden, high chairs available, and a kids menu with smaller portions at reduced prices.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <div class="faq-question">
+                        <span>Do you offer vegetarian meals?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we offer several vegetarian options including our homemade soups, fresh salads, cheese spaetzle, and vegetarian strudel. Please ask your server for the current vegetarian specials.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <div class="faq-question">
+                        <span>What is your beer selection?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We serve a variety of authentic German beers including Pilsner, Weissbier, Dunkel, and seasonal specialties. We also offer Radler, alcohol-free beer, and craft beer selections. All beers are served fresh on tap.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <div class="faq-question">
+                        <span>Are your cakes homemade?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! Our cakes and pastries are baked fresh every morning in our kitchen using traditional recipes and high-quality ingredients. The Black Forest cake and apple strudel are particularly popular among our guests.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <div class="faq-question">
+                        <span>Do you accept credit cards?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we accept all major credit cards (Visa, Mastercard, American Express) as well as debit cards and cash. Contactless payment is also available.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <div class="faq-question">
+                        <span>Is the restaurant wheelchair accessible?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, our main restaurant area and restrooms are wheelchair accessible. The beer garden has some gravel paths, but we have designated accessible seating areas near the entrance. Please let us know if you need assistance.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <div class="faq-question">
+                        <span>Can I host a private event?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we offer private event hosting for birthdays, corporate gatherings, weddings, and other celebrations. We can accommodate groups up to 80 people. Contact us for customized menus and pricing.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <div class="faq-question">
+                        <span>Do you have Wi-Fi?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, complimentary Wi-Fi is available throughout the restaurant and beer garden. Ask your server for the password. However, we encourage you to disconnect and enjoy the natural surroundings!</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <div class="faq-question">
+                        <span>Are you open on holidays?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We are open most holidays with regular hours, but we may have limited hours on Christmas Eve, Christmas Day, and New Year's Eve. Please check our Facebook page or call ahead for holiday hours.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <div class="faq-question">
+                        <span>Do you offer takeout?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we offer takeout for most menu items including our homemade cakes. Please call ahead to place your order, and we will have it ready for pickup. We do not offer delivery service.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <div class="faq-question">
+                        <span>What are your opening hours?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We are open daily from 10:00 AM to 6:00 PM. Our kitchen serves food until 5:30 PM. During peak summer months, we may extend hours on weekends. Follow us on Facebook for updates.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <div class="faq-question">
+                        <span>Is there a dress code?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>There is no formal dress code. We welcome guests in casual hiking gear, cycling outfits, or smart casual attire. Come as you are and enjoy the relaxed, natural atmosphere of our beer garden.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <div class="faq-question">
+                        <span>Do you have allergen information?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we provide detailed allergen information for all menu items. Please inform your server about any allergies or dietary restrictions, and our kitchen team will accommodate your needs safely.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <div class="faq-question">
+                        <span>Can I buy gift vouchers?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, gift vouchers are available in any denomination and make a wonderful present for friends and family. They can be purchased at the restaurant or by phone.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <div class="faq-question">
+                        <span>Is there a playground for children?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we have a small play area in the beer garden with swings and a sandbox. Children can play safely while parents enjoy their meal within sight.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <div class="faq-question">
+                        <span>Do you serve breakfast?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We serve a selection of breakfast items from 10:00 AM including fresh bread rolls, pastries, coffee, and tea. Our full breakfast menu is available on weekends until 12:00 PM.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info reveal">
+                    <span class="section-label">Get in Touch</span>
+                    <h2>Visit Us Today</h2>
+                    <p>We would love to welcome you to Waldbaude am Staudamm. Whether you are planning a hike, a family outing, or simply craving authentic German cuisine, we are here for you.</p>
+                    <div class="contact-details">
+                        <div class="contact-detail">
+                            <div class="contact-detail-icon">📍</div>
+                            <div>
+                                <h4>Address</h4>
+                                <p>Hammerweg<br>99885 Luisenthal<br>Germany</p>
+                            </div>
+                        </div>
+                        <div class="contact-detail">
+                            <div class="contact-detail-icon">📞</div>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>+49 177 2699755</p>
+                            </div>
+                        </div>
+                        <div class="contact-detail">
+                            <div class="contact-detail-icon">📧</div>
+                            <div>
+                                <h4>Email</h4>
+                                <p>info@waldbaude-staudamm.de</p>
+                            </div>
+                        </div>
+                        <div class="contact-detail">
+                            <div class="contact-detail-icon">🅿️</div>
+                            <div>
+                                <h4>Parking</h4>
+                                <p>Free parking available on-site</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-hours">
+                        <h4>Opening Hours</h4>
+                        <div class="hours-row">
+                            <span>Monday - Sunday</span>
+                            <span>10:00 AM - 6:00 PM</span>
+                        </div>
+                        <div class="hours-row">
+                            <span>Kitchen Hours</span>
+                            <span>10:00 AM - 5:30 PM</span>
+                        </div>
+                        <div class="hours-row">
+                            <span>Beer Garden</span>
+                            <span>10:00 AM - 6:00 PM</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-map reveal">
+                    <div class="contact-map-placeholder">
+                        <span class="map-icon">🗺️</span>
+                        <h3>Find Us on Google Maps</h3>
+                        <p>Hammerweg, 99885 Luisenthal</p>
+                        <a href="https://maps.google.com/?q=Hammerweg+99885+Luisenthal" target="_blank" class="contact-map-btn">Open in Google Maps</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Waldbaude am Staudamm</h3>
+                    <p>Where the forest meets authentic German hospitality. Enjoy traditional cuisine, homemade cakes, and fresh beer in a breathtaking natural setting near the Staudamm in Luisenthal.</p>
+                    <div class="footer-social">
+                        <a href="https://facebook.com" target="_blank" aria-label="Facebook">f</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="TripAdvisor">✈</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#beer-garden">Beer Garden</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Information</h4>
+                    <ul>
+                        <li><a href="#reservations">Reservations</a></li>
+                        <li><a href="#events">Events</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#reviews">Reviews</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Impressum</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Waldbaude am Staudamm. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Impressum</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Buttons -->
+    <div class="floating-buttons">
+        <a href="tel:+491772699755" class="floating-btn call" aria-label="Call us">
+            📞
+            <span class="floating-btn-tooltip">Call Now</span>
+        </a>
+        <a href="#reservations" class="floating-btn reserve" aria-label="Reserve table">
+            📅
+            <span class="floating-btn-tooltip">Reserve Table</span>
+        </a>
+    </div>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+    <script>
+        // Loader
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loader').classList.add('hidden');
+            }, 1500);
+        });
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileMenuClose = document.getElementById('mobileMenuClose');
+        const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+
+        function openMobileMenu() {
+            mobileMenu.classList.add('active');
+            mobileMenuOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('active');
+            mobileMenuOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        mobileMenuBtn.addEventListener('click', openMobileMenu);
+        mobileMenuClose.addEventListener('click', closeMobileMenu);
+        mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+
+        document.querySelectorAll('.mobile-menu-links a').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+
+        // Dark mode toggle
+        const themeToggle = document.getElementById('themeToggle');
+        let isDark = false;
+
+        themeToggle.addEventListener('click', () => {
+            isDark = !isDark;
+            document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+            themeToggle.textContent = isDark ? '☀️' : '🌙';
+        });
+
+        // Scroll reveal animation
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // Back to top
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Menu tabs
+        const menuTabs = document.querySelectorAll('.menu-tab');
+        const menuItems = document.querySelectorAll('.menu-item');
+
+        menuTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                menuTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                const category = tab.dataset.category;
+
+                menuItems.forEach(item => {
+                    if (item.dataset.category === category) {
+                        item.style.display = 'block';
+                        setTimeout(() => item.style.opacity = '1', 10);
+                    } else {
+                        item.style.display = 'none';
+                        item.style.opacity = '0';
+                    }
+                });
+            });
+        });
+
+        // FAQ accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                faqItems.forEach(i => i.classList.remove('active'));
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Reservation form
+        const reservationForm = document.getElementById('reservationForm');
+        reservationForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your reservation request! We will contact you shortly to confirm your booking.
+
+Waldbaude am Staudamm Team');
+            reservationForm.reset();
+        });
+
+        // Set min date for reservation
+        const dateInput = document.getElementById('date');
+        const today = new Date().toISOString().split('T')[0];
+        dateInput.setAttribute('min', today);
+
+        // Particles
+        const particlesContainer = document.getElementById('particles');
+        for (let i = 0; i < 30; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.top = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 15 + 's';
+            particle.style.animationDuration = (10 + Math.random() * 10) + 's';
+            particlesContainer.appendChild(particle);
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Active nav link on scroll
+        const sections = document.querySelectorAll('section[id]');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (scrollY >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
